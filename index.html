@@ -18,10 +18,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 #stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 .star{position:absolute;border-radius:50%;background:rgba(255,255,255,.7);animation:twinkle var(--t) ease-in-out infinite;}
 @keyframes twinkle{0%,100%{opacity:.1;transform:scale(1)}50%{opacity:.9;transform:scale(1.5)}}
-
+ 
 .screen{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
 .screen.hidden{display:none;}
-
+ 
 /* ── REGISTRO ── */
 .register-card{background:linear-gradient(145deg,rgba(13,33,69,.97),rgba(10,22,40,.99));border:1px solid rgba(245,200,66,.25);border-radius:24px;padding:52px 44px;width:100%;max-width:540px;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 60px rgba(245,200,66,.08);text-align:center;}
 .course-badge{display:inline-block;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:20px;}
@@ -41,7 +41,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .btn-start{width:100%;margin-top:10px;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));border:none;border-radius:12px;padding:18px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:var(--blue-deep);cursor:pointer;transition:all .3s;box-shadow:0 8px 30px rgba(245,200,66,.35);}
 .btn-start:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(245,200,66,.5);}
 select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F5C842' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px!important;}
-
+ 
 /* ── GAME ── */
 #gameScreen{flex-direction:column;align-items:center;padding:16px 20px;gap:0;}
 .game-header{width:100%;max-width:920px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(13,33,69,.75);border-bottom:1px solid rgba(245,200,66,.15);border-radius:16px 16px 0 0;backdrop-filter:blur(10px);}
@@ -53,11 +53,11 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .prize-display{text-align:right;}
 .prize-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);font-family:'Barlow Condensed',sans-serif;}
 .prize-value{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--gold-light);text-shadow:0 0 20px rgba(245,200,66,.5);}
-
+ 
 /* progress bar */
 .prog-wrap{width:100%;max-width:920px;height:6px;background:rgba(255,255,255,.06);border-left:1px solid rgba(245,200,66,.1);border-right:1px solid rgba(245,200,66,.1);}
 .prog-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));transition:width .5s ease;border-radius:0 3px 3px 0;}
-
+ 
 /* prize strip */
 .prize-strip-wrap{width:100%;max-width:920px;padding:8px 24px;background:rgba(10,22,40,.65);border-left:1px solid rgba(245,200,66,.1);border-right:1px solid rgba(245,200,66,.1);backdrop-filter:blur(10px);}
 .prize-strip{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;}
@@ -66,12 +66,12 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .prize-chip.passed{color:rgba(245,200,66,.4);border-color:rgba(245,200,66,.2);}
 .prize-chip.milestone{border-color:rgba(0,230,118,.4);color:var(--green);}
 .prize-chip.milestone.passed{background:rgba(0,230,118,.12);}
-
+ 
 /* timer */
 .timer-text{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--gray);width:100%;max-width:920px;margin-bottom:4px;}
 .timer-wrap{width:100%;max-width:920px;height:5px;background:rgba(255,255,255,.06);margin-bottom:12px;overflow:hidden;}
 .timer-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));transition:width 1s linear;}
-
+ 
 /* question */
 .question-area{width:100%;max-width:920px;background:rgba(13,33,69,.88);border-left:1px solid rgba(245,200,66,.15);border-right:1px solid rgba(245,200,66,.15);padding:26px 32px 20px;backdrop-filter:blur(10px);}
 .question-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
@@ -90,7 +90,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .option-btn.wrong{background:rgba(255,23,68,.15);border-color:var(--red);}
 .option-btn.eliminated{opacity:.15!important;pointer-events:none;}
 @keyframes correctFlash{0%,100%{box-shadow:0 0 0 rgba(0,230,118,0)}50%{box-shadow:0 0 30px rgba(0,230,118,.5)}}
-
+ 
 /* feedback inline */
 .feedback-box{margin-top:14px;padding:14px 18px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.25);border-radius:10px;font-size:13px;color:rgba(240,244,255,.85);line-height:1.6;display:none;}
 .feedback-box.wrong-fb{background:rgba(255,23,68,.08);border-color:rgba(255,23,68,.25);}
@@ -98,7 +98,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .feedback-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
 .feedback-label.ok{color:var(--green);}
 .feedback-label.no{color:var(--red);}
-
+ 
 /* lifelines + nav */
 .lifelines-bar{width:100%;max-width:920px;background:rgba(10,22,40,.75);border-left:1px solid rgba(245,200,66,.1);border-right:1px solid rgba(245,200,66,.1);border-bottom:1px solid rgba(245,200,66,.1);border-radius:0 0 16px 16px;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(10px);margin-bottom:20px;gap:10px;flex-wrap:wrap;}
 .lifelines-group{display:flex;gap:10px;}
@@ -109,7 +109,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .btn-next{background:linear-gradient(135deg,var(--gold-dark),var(--gold));border:none;border-radius:10px;padding:11px 28px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--blue-deep);cursor:pointer;transition:all .3s;display:none;}
 .btn-next.show{display:block;}
 .btn-next:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,200,66,.4);}
-
+ 
 /* ── RESULTADO ── */
 #resultScreen{flex-direction:column;}
 .result-card{background:linear-gradient(145deg,rgba(13,33,69,.97),rgba(10,22,40,.99));border-radius:24px;padding:48px 44px;width:100%;max-width:580px;text-align:center;border:1px solid rgba(245,200,66,.2);box-shadow:0 40px 100px rgba(0,0,0,.7);}
@@ -128,7 +128,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .btn-cert:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(245,200,66,.5);}
 .btn-retry{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 32px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--white);cursor:pointer;transition:all .3s;width:100%;}
 .btn-retry:hover{background:rgba(255,255,255,.14);}
-
+ 
 /* ── CERTIFICADO ── */
 #certScreen{background:linear-gradient(135deg,#f5f0e8 0%,#fdf8f0 50%,#f5f0e8 100%);flex-direction:column;gap:20px;}
 .cert-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
@@ -136,11 +136,11 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .cert-btn.primary{background:linear-gradient(135deg,#1a3a6e,#2a5298);color:#fff;box-shadow:0 6px 20px rgba(26,58,110,.4);}
 .cert-btn.secondary{background:rgba(26,58,110,.08);color:#1a3a6e;border:2px solid rgba(26,58,110,.3);}
 .cert-btn:hover{transform:translateY(-2px);}
-
+ 
 /* certificate canvas wrapper */
 #certWrapper{width:100%;max-width:900px;position:relative;}
 #certCanvas{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.25);}
-
+ 
 /* modals */
 .modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(5,10,20,.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .4s ease;}
 .modal-overlay.hidden{display:none;}
@@ -164,10 +164,10 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 .audience-bar-fill{width:100%;border-radius:4px;background:linear-gradient(180deg,var(--blue-accent),var(--teal));transition:height 1s cubic-bezier(.34,1.56,.64,1);}
 .audience-bar-pct{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--white);}
 .audience-bar-letter{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);}
-
+ 
 .confetti-piece{position:fixed;border-radius:2px;animation:confettiFall linear forwards;z-index:200;pointer-events:none;}
 @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
-
+ 
 @media(max-width:600px){
   .register-card{padding:32px 20px;}
   .form-row{grid-template-columns:1fr;}
@@ -179,7 +179,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
 </head>
 <body>
 <div id="stars"></div>
-
+ 
 <!-- ═══ TELA 1: REGISTRO ═══ -->
 <div class="screen" id="registerScreen">
   <div class="register-card">
@@ -236,7 +236,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
     <button class="btn-start" onclick="startGame()">🎯 INICIAR O CURSO</button>
   </div>
 </div>
-
+ 
 <!-- ═══ TELA 2: JOGO ═══ -->
 <div class="screen hidden" id="gameScreen">
   <!-- header -->
@@ -286,7 +286,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
     <button class="btn-next" id="btnNext" onclick="nextQuestion()">PRÓXIMA ➜</button>
   </div>
 </div>
-
+ 
 <!-- ═══ TELA 3: RESULTADO ═══ -->
 <div class="screen hidden" id="resultScreen">
   <div class="result-card">
@@ -304,7 +304,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
     <button class="btn-retry" onclick="restartGame()">🔄 TENTAR NOVAMENTE</button>
   </div>
 </div>
-
+ 
 <!-- ═══ TELA 4: CERTIFICADO ═══ -->
 <div class="screen hidden" id="certScreen">
   <div id="certWrapper">
@@ -316,7 +316,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
     <button class="cert-btn secondary" onclick="backToResult()">← VOLTAR</button>
   </div>
 </div>
-
+ 
 <!-- MODALS -->
 <div class="modal-overlay hidden" id="phoneModal">
   <div class="modal-card">
@@ -334,7 +334,7 @@ select{-webkit-appearance:none;appearance:none;background-image:url("data:image/
     <button class="btn-modal" onclick="hideModal('audienceModal')">OBRIGADO!</button>
   </div>
 </div>
-
+ 
 <script>
 // ═══════════════════════════════════════════════════════
 //  BANCO DE PERGUNTAS — 30 questões — Portaria 1.043/2024
@@ -377,7 +377,7 @@ const allQuestions = {
     { q:"O art. 16 da Portaria veda pagamentos dos recursos federais por qual meio?", options:["A) TED e transferência eletrônica","B) Ordem bancária","C) Cheques, dinheiro em espécie, cartões corporativos ou meios que não identifiquem o destinatário","D) Transferência entre contas do mesmo banco"], answer:2, feedback:"Os pagamentos devem ser exclusivamente por meio eletrônico com identificação do destinatário (TED, OB, etc.). São proibidos cheques, espécie, cartões corporativos e outros meios sem rastreabilidade (art. 16)." }
   ]
 };
-
+ 
 const prizes = [
   {value:1000,label:"R$ 1.000",difficulty:"easy",milestone:false},
   {value:2000,label:"R$ 2.000",difficulty:"easy",milestone:false},
@@ -395,9 +395,9 @@ const prizes = [
   {value:750000,label:"R$ 750.000",difficulty:"hard",milestone:false},
   {value:1000000,label:"R$ 1.000.000",difficulty:"hard",milestone:false}
 ];
-
+ 
 const PASS_THRESHOLD = 0.70; // 70% = 11/15
-
+ 
 let state = {
   player:{name:'',cpf:'',city:'',email:'',role:''},
   currentQ:0, questions:[], hits:0,
@@ -405,10 +405,10 @@ let state = {
   timer:null, timeLeft:30, answered:false,
   certCode:''
 };
-
+ 
 // STARS
 (function(){const c=document.getElementById('stars');for(let i=0;i<120;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2.5+0.5;s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--t:${(Math.random()*4+2).toFixed(1)}s;animation-delay:${(Math.random()*5).toFixed(2)}s;`;c.appendChild(s);}})();
-
+ 
 // CPF mask
 document.getElementById('playerCPF').addEventListener('input',function(){
   let v=this.value.replace(/\D/g,'');
@@ -417,9 +417,9 @@ document.getElementById('playerCPF').addEventListener('input',function(){
   if(v.length>11) v=v.slice(0,11)+'-'+v.slice(11);
   this.value=v.slice(0,14);
 });
-
+ 
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-
+ 
 function startGame(){
   const name=document.getElementById('playerName').value.trim();
   const cpf=document.getElementById('playerCPF').value.trim();
@@ -443,7 +443,7 @@ function startGame(){
   buildPrizeStrip();
   loadQuestion();
 }
-
+ 
 function generateCode(){
   const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   let code='SUAS-';
@@ -452,7 +452,7 @@ function generateCode(){
   for(let i=0;i<4;i++){code+=chars[Math.floor(Math.random()*chars.length)];}
   return code;
 }
-
+ 
 function buildPrizeStrip(){
   const strip=document.getElementById('prizeStrip');
   strip.innerHTML='';
@@ -465,7 +465,7 @@ function buildPrizeStrip(){
   });
   updateStrip();
 }
-
+ 
 function updateStrip(){
   prizes.forEach((p,i)=>{
     const c=document.getElementById(`chip${i}`);
@@ -475,7 +475,7 @@ function updateStrip(){
     else if(i<state.currentQ) c.classList.add('passed');
   });
 }
-
+ 
 function loadQuestion(){
   if(state.currentQ>=15){showResult();return;}
   const qData=state.questions[state.currentQ];
@@ -498,7 +498,7 @@ function loadQuestion(){
   updateLifelineBtns();
   startTimer();
 }
-
+ 
 function renderOptions(qData,hidden=[]){
   const grid=document.getElementById('optionsGrid');
   grid.innerHTML='';
@@ -511,7 +511,7 @@ function renderOptions(qData,hidden=[]){
     grid.appendChild(btn);
   });
 }
-
+ 
 function startTimer(){
   clearInterval(state.timer);
   state.timeLeft=30; updateTimerUI();
@@ -525,7 +525,7 @@ function updateTimerUI(){
   document.getElementById('timerText').textContent=state.timeLeft;
 }
 function stopTimer(){clearInterval(state.timer);}
-
+ 
 function timeOut(){
   if(state.answered) return;
   state.answered=true;
@@ -534,7 +534,7 @@ function timeOut(){
   document.querySelectorAll('.option-btn')[qData.answer].classList.add('correct');
   showFeedback(false,qData);
 }
-
+ 
 function selectAnswer(idx){
   if(state.answered) return;
   state.answered=true;
@@ -552,9 +552,9 @@ function selectAnswer(idx){
     showFeedback(correct,qData);
   },500);
 }
-
+ 
 function disableAll(){document.querySelectorAll('.option-btn').forEach(b=>{b.disabled=true;b.onclick=null;});}
-
+ 
 function showFeedback(correct,qData){
   const fb=document.getElementById('feedbackBox');
   const lbl=document.getElementById('feedbackLabel');
@@ -566,13 +566,13 @@ function showFeedback(correct,qData){
   document.getElementById('scoreDisplay').textContent=`${state.hits} / ${state.currentQ+1}`;
   document.getElementById('btnNext').className='btn-next show';
 }
-
+ 
 function nextQuestion(){
   state.currentQ++;
   if(state.currentQ>=15){showResult();return;}
   loadQuestion();
 }
-
+ 
 function showResult(){
   stopTimer();
   const total=15, hits=state.hits;
@@ -606,20 +606,20 @@ function showResult(){
     confetti();
   }
 }
-
+ 
 function restartGame(){
   stopTimer();
   hide('resultScreen');hide('certScreen');
   show('registerScreen');
 }
-
+ 
 // ─── LIFELINES ───
 function updateLifelineBtns(){
   document.getElementById('ll50').disabled=!state.lifelines.fifty;
   document.getElementById('llPhone').disabled=!state.lifelines.phone;
   document.getElementById('llAudience').disabled=!state.lifelines.audience;
 }
-
+ 
 function useLifeline(type){
   if(!state.lifelines[type]||state.answered) return;
   state.lifelines[type]=false;
@@ -651,7 +651,7 @@ function useLifeline(type){
     setTimeout(()=>document.querySelectorAll('.audience-bar-fill').forEach((b,i)=>b.style.height=ad[i]+'%'),100);
   }
 }
-
+ 
 function generateAudienceData(c){
   const b=[0,0,0,0];
   const cp=55+Math.floor(Math.random()*25);
@@ -661,23 +661,23 @@ function generateAudienceData(c){
   o.forEach((idx,i)=>{if(i===o.length-1){b[idx]=r;}else{const p=Math.floor(Math.random()*r*.6);b[idx]=p;r-=p;}});
   return b;
 }
-
+ 
 // ─── CERTIFICADO ───
 function showCertificate(){
   hide('resultScreen');
   show('certScreen');
   generateCertificate();
 }
-
+ 
 function backToResult(){
   hide('certScreen');
   show('resultScreen');
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 //  UTILITÁRIOS DE DESENHO
 // ═══════════════════════════════════════════════════════
-
+ 
 // Texto com quebra automática — retorna a próxima posição Y
 function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
   const words = text.split(' ');
@@ -696,7 +696,7 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
   ctx.fillText(line.trim(), x, curY);
   return curY + lineHeight;
 }
-
+ 
 // Texto centralizado com quebra automática — retorna próxima Y
 function wrapTextCenter(ctx, text, cx, y, maxWidth, lineHeight) {
   const words = text.split(' ');
@@ -715,7 +715,7 @@ function wrapTextCenter(ctx, text, cx, y, maxWidth, lineHeight) {
   ctx.fillText(line.trim(), cx, curY);
   return curY + lineHeight;
 }
-
+ 
 // Trunca texto ao limite de largura com reticências
 function fitText(ctx, text, maxWidth) {
   if (ctx.measureText(text).width <= maxWidth) return text;
@@ -724,7 +724,7 @@ function fitText(ctx, text, maxWidth) {
   }
   return text + '…';
 }
-
+ 
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
@@ -738,7 +738,7 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.quadraticCurveTo(x, y, x + r, y);
   ctx.closePath();
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 //  GERADOR DE CERTIFICADO — layout em zonas fixas
 //  Altura total: 920px  |  Largura: 1280px
@@ -759,14 +759,14 @@ function generateCertificate() {
   canvas.height = H;
   const ctx = canvas.getContext('2d');
   const CX = W / 2; // centro horizontal
-
+ 
   // ── Preparar dados do aluno ──
   const now = new Date();
   const dateStr = now.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
   const pct = Math.round((state.hits / 15) * 100);
   const nome = state.player.name;
   const nomeUp = nome.toUpperCase();
-
+ 
   // ═══════════════════════
   //  FUNDO
   // ═══════════════════════
@@ -776,7 +776,7 @@ function generateCertificate() {
   bgGrad.addColorStop(1,   '#fef9f0');
   ctx.fillStyle = bgGrad;
   ctx.fillRect(0, 0, W, H);
-
+ 
   // textura sutil (pontos)
   ctx.fillStyle = 'rgba(26,58,110,0.018)';
   for (let r = 0; r < H; r += 18) {
@@ -786,7 +786,7 @@ function generateCertificate() {
       ctx.fill();
     }
   }
-
+ 
   // ═══════════════════════
   //  BORDAS
   // ═══════════════════════
@@ -794,17 +794,17 @@ function generateCertificate() {
   ctx.strokeStyle = '#1a3a6e';
   ctx.lineWidth = 12;
   ctx.strokeRect(16, 16, W - 32, H - 32);
-
+ 
   // Borda dourada interna
   ctx.strokeStyle = '#c49a00';
   ctx.lineWidth = 3;
   ctx.strokeRect(30, 30, W - 60, H - 60);
-
+ 
   // Linha decorativa fina azul
   ctx.strokeStyle = 'rgba(26,58,110,0.2)';
   ctx.lineWidth = 1;
   ctx.strokeRect(40, 40, W - 80, H - 80);
-
+ 
   // ═══════════════════════
   //  ORNAMENTOS DE CANTO
   // ═══════════════════════
@@ -838,7 +838,7 @@ function generateCertificate() {
     ctx.lineTo(ox + dx * 70, oy);
     ctx.stroke();
   });
-
+ 
   // ═══════════════════════
   //  ZONA A — FAIXA SUPERIOR (0–108)
   // ═══════════════════════
@@ -848,17 +848,17 @@ function generateCertificate() {
   topGrad.addColorStop(1,   '#0d2145');
   ctx.fillStyle = topGrad;
   ctx.fillRect(42, 44, W - 84, 62);
-
+ 
   // Linha dourada acima e abaixo da faixa
   ctx.fillStyle = '#c49a00';
   ctx.fillRect(42, 44, W - 84, 2);
   ctx.fillRect(42, 104, W - 84, 2);
-
+ 
   ctx.fillStyle = '#FFE082';
   ctx.font = 'bold 15px Cinzel, Georgia, serif';
   ctx.textAlign = 'center';
   ctx.fillText('MACRO CONSULTORIA E TREINAMENTO  ✦  SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL — SUAS', CX, 80);
-
+ 
   // ═══════════════════════
   //  ZONA B — TÍTULO (110–210)
   // ═══════════════════════
@@ -866,7 +866,7 @@ function generateCertificate() {
   ctx.fillStyle = '#1a3a6e';
   ctx.textAlign = 'center';
   ctx.fillText('CERTIFICADO', CX, 185);
-
+ 
   // linha dourada degradê sob título
   const lgW = 340;
   const lg = ctx.createLinearGradient(CX - lgW, 0, CX + lgW, 0);
@@ -876,7 +876,7 @@ function generateCertificate() {
   lg.addColorStop(1, 'rgba(245,200,66,0)');
   ctx.fillStyle = lg;
   ctx.fillRect(CX - lgW, 194, lgW * 2, 3);
-
+ 
   // ═══════════════════════
   //  ZONA C — SUBTÍTULO (210–310)
   // ═══════════════════════
@@ -884,15 +884,15 @@ function generateCertificate() {
   ctx.fillStyle = '#7a6030';
   ctx.textAlign = 'center';
   ctx.fillText('de Conclusão de Curso', CX, 232);
-
+ 
   ctx.fillStyle = '#b8940a';
   ctx.font = '20px Georgia, serif';
   ctx.fillText('— ✦ ✦ ✦ —', CX, 265);
-
+ 
   ctx.font = '19px Georgia, serif';
   ctx.fillStyle = '#333';
   ctx.fillText('Certificamos que', CX, 302);
-
+ 
   // ═══════════════════════
   //  ZONA D — NOME + CPF (310–465)
   // ═══════════════════════
@@ -904,7 +904,7 @@ function generateCertificate() {
   nameBg.addColorStop(1,   'rgba(26,58,110,0)');
   ctx.fillStyle = nameBg;
   ctx.fillRect(CX - 500, 316, 1000, 82);
-
+ 
   // Escolhe tamanho de fonte adaptativo para o nome
   let nameFontSize = 54;
   ctx.font = `bold ${nameFontSize}px Cinzel, Georgia, serif`;
@@ -912,14 +912,14 @@ function generateCertificate() {
     nameFontSize -= 2;
     ctx.font = `bold ${nameFontSize}px Cinzel, Georgia, serif`;
   }
-
+ 
   const nameGrad = ctx.createLinearGradient(CX - 400, 0, CX + 400, 0);
   nameGrad.addColorStop(0,   '#1a3a6e');
   nameGrad.addColorStop(0.5, '#0d2060');
   nameGrad.addColorStop(1,   '#1a3a6e');
   ctx.fillStyle = nameGrad;
   ctx.textAlign = 'center';
-
+ 
   // Se o nome ainda for longo, quebra em duas linhas
   if (ctx.measureText(nomeUp).width > 1080) {
     const half = Math.ceil(nomeUp.split(' ').length / 2);
@@ -933,24 +933,24 @@ function generateCertificate() {
   } else {
     ctx.fillText(nomeUp, CX, 370);
   }
-
+ 
   // Linha dourada sob o nome
   ctx.fillStyle = lg;
   ctx.fillRect(CX - 420, 386, 840, 2);
-
+ 
   // CPF e e-mail lado a lado
   ctx.font = '15px Georgia, serif';
   ctx.fillStyle = '#5a4a2a';
   ctx.textAlign = 'center';
   ctx.fillText(`CPF: ${state.player.cpf}   ·   ${state.player.email}`, CX, 415);
-
+ 
   // Cidade e função
   ctx.font = '15px Georgia, serif';
   ctx.fillStyle = '#666';
   ctx.textAlign = 'center';
   const cidFunc = fitText(ctx, `${state.player.city}  ·  ${state.player.role}`, 900);
   ctx.fillText(cidFunc, CX, 442);
-
+ 
   // ═══════════════════════
   //  ZONA E — DESCRIÇÃO DO CURSO (462–580)
   // ═══════════════════════
@@ -958,16 +958,16 @@ function generateCertificate() {
   ctx.fillStyle = '#222';
   ctx.textAlign = 'center';
   ctx.fillText('concluiu com aprovação o curso interativo', CX, 482);
-
+ 
   ctx.font = 'bold 32px Cinzel, Georgia, serif';
   ctx.fillStyle = '#1a3a6e';
   ctx.fillText('SHOW DO SUAS — PORTARIA 1.043/2024', CX, 524);
-
+ 
   ctx.font = 'italic 17px Georgia, serif';
   ctx.fillStyle = '#5a4a2a';
   const subtCurso = 'Gestão e Financiamento do SUAS · Modalidade Quiz Interativo · Carga Horária: 4 horas';
   ctx.fillText(fitText(ctx, subtCurso, 1100), CX, 556);
-
+ 
   // ═══════════════════════
   //  ZONA F — BOXES INFORMATIVOS (575–665)
   // ═══════════════════════
@@ -980,7 +980,7 @@ function generateCertificate() {
   const bTotalW = bW * 3 + bGap * 2;
   const bStartX = (W - bTotalW) / 2;
   const bY = 578;
-
+ 
   boxes.forEach((b, i) => {
     const bx = bStartX + i * (bW + bGap);
     // sombra suave
@@ -1006,12 +1006,12 @@ function generateCertificate() {
     ctx.fillStyle = '#1a3a6e';
     ctx.fillText(fitText(ctx, b.value, bW - 20), bx + bW / 2, bY + 50);
   });
-
+ 
   // ═══════════════════════
   //  ZONA G — DATA DE EMISSÃO EM DESTAQUE (668–758)
   // ═══════════════════════
   const dateY = 668;
-
+ 
   // Linha separadora antes da data
   ctx.setLineDash([6, 5]);
   ctx.strokeStyle = 'rgba(196,154,0,0.4)';
@@ -1021,7 +1021,7 @@ function generateCertificate() {
   ctx.lineTo(W - 100, dateY);
   ctx.stroke();
   ctx.setLineDash([]);
-
+ 
   // Cápsula de destaque para a data
   const capW = 520, capH = 56, capX = CX - capW / 2, capYpos = dateY + 12;
   const capGrad = ctx.createLinearGradient(capX, 0, capX + capW, 0);
@@ -1031,30 +1031,30 @@ function generateCertificate() {
   ctx.fillStyle = capGrad;
   roundRect(ctx, capX, capYpos, capW, capH, 28);
   ctx.fill();
-
+ 
   // Borda dourada na cápsula
   ctx.strokeStyle = '#c49a00';
   ctx.lineWidth = 2;
   roundRect(ctx, capX, capYpos, capW, capH, 28);
   ctx.stroke();
-
+ 
   // Ícone calendário
   ctx.font = '20px Georgia, serif';
   ctx.fillStyle = '#FFE082';
   ctx.textAlign = 'left';
   ctx.fillText('📅', capX + 22, capYpos + 36);
-
+ 
   // Rótulo EMITIDO EM
   ctx.font = 'bold 11px Cinzel, Georgia, serif';
   ctx.fillStyle = 'rgba(255,224,130,0.7)';
   ctx.textAlign = 'left';
   ctx.fillText('EMITIDO EM', capX + 58, capYpos + 22);
-
+ 
   // Data por extenso
   ctx.font = 'bold 22px Cinzel, Georgia, serif';
   ctx.fillStyle = '#FFE082';
   ctx.fillText(dateStr, capX + 58, capYpos + 44);
-
+ 
   // Linha separadora após a data
   ctx.setLineDash([6, 5]);
   ctx.strokeStyle = 'rgba(196,154,0,0.4)';
@@ -1064,13 +1064,13 @@ function generateCertificate() {
   ctx.lineTo(W - 100, dateY + 82);
   ctx.stroke();
   ctx.setLineDash([]);
-
+ 
   // ═══════════════════════
   //  ZONA H — ASSINATURAS (762–858)
   // ═══════════════════════
   const sigY = 762;
   const sigLineY = sigY + 60;
-
+ 
   // Assinatura ESQUERDA — Nilton Gomes
   const sig1CX = 300;
   ctx.strokeStyle = '#1a3a6e';
@@ -1080,18 +1080,18 @@ function generateCertificate() {
   ctx.moveTo(sig1CX - 170, sigLineY);
   ctx.lineTo(sig1CX + 170, sigLineY);
   ctx.stroke();
-
+ 
   ctx.font = 'bold 15px Cinzel, Georgia, serif';
   ctx.fillStyle = '#1a3a6e';
   ctx.textAlign = 'center';
   ctx.fillText('NILTON GOMES', sig1CX, sigLineY + 22);
-
+ 
   ctx.font = '12px Georgia, serif';
   ctx.fillStyle = '#555';
   ctx.fillText('Contador · CRC MA', sig1CX, sigLineY + 40);
   ctx.fillText('Especialista em Gestão Municipal do SUAS', sig1CX, sigLineY + 56);
   ctx.fillText('Macro Consultoria e Treinamento', sig1CX, sigLineY + 72);
-
+ 
   // Assinatura DIREITA — Participante
   const sig2CX = W - 300;
   ctx.strokeStyle = '#1a3a6e';
@@ -1100,18 +1100,18 @@ function generateCertificate() {
   ctx.moveTo(sig2CX - 170, sigLineY);
   ctx.lineTo(sig2CX + 170, sigLineY);
   ctx.stroke();
-
+ 
   ctx.font = `bold ${nome.length > 28 ? 12 : 15}px Cinzel, Georgia, serif`;
   ctx.fillStyle = '#1a3a6e';
   ctx.textAlign = 'center';
   ctx.fillText(fitText(ctx, nomeUp, 340), sig2CX, sigLineY + 22);
-
+ 
   ctx.font = '12px Georgia, serif';
   ctx.fillStyle = '#555';
   ctx.fillText(fitText(ctx, state.player.role, 340), sig2CX, sigLineY + 40);
   ctx.fillText(fitText(ctx, state.player.city, 340), sig2CX, sigLineY + 56);
   ctx.fillText(`CPF: ${state.player.cpf}`, sig2CX, sigLineY + 72);
-
+ 
   // ═══════════════════════
   //  ZONA I — RODAPÉ (862–920)
   // ═══════════════════════
@@ -1121,24 +1121,24 @@ function generateCertificate() {
   footGrad.addColorStop(1,   '#0d2145');
   ctx.fillStyle = footGrad;
   ctx.fillRect(42, 862, W - 84, 50);
-
+ 
   // Linha dourada acima do rodapé
   ctx.fillStyle = '#c49a00';
   ctx.fillRect(42, 862, W - 84, 2);
-
+ 
   ctx.font = '12px Georgia, serif';
   ctx.fillStyle = '#FFE082';
-
+ 
   ctx.textAlign = 'left';
   ctx.fillText(`Cód. verificação: ${state.certCode}`, 68, 892);
-
+ 
   ctx.textAlign = 'center';
   ctx.fillText('macroconsultoria.com.br  ·  contato@macroconsultoria.com.br', CX, 892);
-
+ 
   ctx.textAlign = 'right';
   ctx.fillText(`Emitido em: ${dateStr}`, W - 68, 892);
 }
-
+ 
 function downloadCert(){
   const canvas=document.getElementById('certCanvas');
   const link=document.createElement('a');
@@ -1147,7 +1147,7 @@ function downloadCert(){
   link.href=canvas.toDataURL('image/png',1.0);
   link.click();
 }
-
+ 
 function printCert(){
   const canvas=document.getElementById('certCanvas');
   const win=window.open('','_blank');
@@ -1155,13 +1155,13 @@ function printCert(){
   win.document.close();
   win.onload=()=>{win.print();};
 }
-
+ 
 // helpers
 function show(id){document.getElementById(id).classList.remove('hidden');}
 function hide(id){document.getElementById(id).classList.add('hidden');}
 function showModal(id){document.getElementById(id).classList.remove('hidden');}
 function hideModal(id){document.getElementById(id).classList.add('hidden');}
-
+ 
 function confetti(){
   const colors=['#F5C842','#FFE082','#42A5F5','#00E676','#FF1744','#00BCD4','#fff','#c49a00'];
   for(let i=0;i<140;i++){
