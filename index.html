@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso SUAS — Show do Saber | Portaria 1.043/2024</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#F5C842; --gold-light:#FFE082; --gold-dark:#C49A00;
+  --blue-deep:#0A1628; --blue-mid:#0D2145; --blue-accent:#42A5F5;
+  --teal:#00BCD4; --green:#00E676; --red:#FF1744;
+  --white:#F0F4FF; --gray:#8899BB;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--blue-deep);font-family:'Barlow',sans-serif;min-height:100vh;overflow-x:hidden;color:var(--white);}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(21,101,192,.35) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 90%,rgba(0,188,212,.12) 0%,transparent 60%);pointer-events:none;z-index:0;}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.star{position:absolute;border-radius:50%;background:rgba(255,255,255,.7);animation:twinkle var(--t) ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:.1;transform:scale(1)}50%{opacity:.9;transform:scale(1.5)}}
+
+.screen{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.screen.hidden{display:none;}
+
+/* ── REGISTRO ── */
+.register-card{background:linear-gradient(145deg,rgba(13,33,69,.97),rgba(10,22,40,.99));border:1px solid rgba(245,200,66,.25);border-radius:24px;padding:52px 44px;width:100%;max-width:540px;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 60px rgba(245,200,66,.08);text-align:center;}
+.course-badge{display:inline-block;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:20px;}
+.logo-icon{font-size:60px;margin-bottom:8px;filter:drop-shadow(0 0 20px rgba(245,200,66,.5));}
+.register-card h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,6vw,52px);letter-spacing:4px;background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:4px;}
+.register-card .sub1{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
+.register-card .sub2{font-size:12px;color:var(--gray);margin-bottom:10px;}
+.course-info{display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;}
+.info-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:8px 16px;font-size:12px;color:var(--gray);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;}
+.info-chip span{color:var(--white);font-weight:600;}
+.form-group{margin-bottom:16px;text-align:left;}
+.form-group label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.form-group input,.form-group select{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(245,200,66,.2);border-radius:10px;padding:13px 18px;color:var(--white);font-family:'Barlow',sans-serif;font-size:15px;transition:all .3s;outline:none;}
+.form-group input:focus,.form-group select:focus{border-color:var(--gold);background:rgba(245,200,66,.08);box-shadow:0 0 20px rgba(245,200,66,.15);}
+.form-group select option{background:var(--blue-mid);color:var(--white);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.btn-start{width:100%;margin-top:10px;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));border:none;border-radius:12px;padding:18px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:var(--blue-deep);cursor:pointer;transition:all .3s;box-shadow:0 8px 30px rgba(245,200,66,.35);}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(245,200,66,.5);}
+select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F5C842' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px!important;}
+
+/* ── GAME ── */
+#gameScreen{flex-direction:column;align-items:center;padding:16px 20px;gap:0;}
+.game-header{width:100%;max-width:920px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(13,33,69,.75);border-bottom:1px solid rgba(245,200,66,.15);border-radius:16px 16px 0 0;backdrop-filter:blur(10px);}
+.player-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--gold);}
+.player-meta{font-size:11px;color:var(--gray);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;}
+.score-display{text-align:center;}
+.score-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);font-family:'Barlow Condensed',sans-serif;}
+.score-value{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--gold-light);}
+.prize-display{text-align:right;}
+.prize-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);font-family:'Barlow Condensed',sans-serif;}
+.prize-value{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;color:var(--gold-light);text-shadow:0 0 20px rgba(245,200,66,.5);}
+
+/* progress bar */
+.prog-wrap{width:100%;max-width:920px;height:6px;background:rgba(255,255,255,.06);border-left:1px solid rgba(245,200,66,.1);border-right:1px solid rgba(245,200,66,.1);}
+.prog-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));transition:width .5s ease;border-radius:0 3px 3px 0;}
+
+/* prize strip */
+.prize-strip-wrap{width:100%;max-width:920px;padding:8px 24px;background:rgba(10,22,40,.65);border-left:1px solid rgba(245,200,66,.1);border-right:1px solid rgba(245,200,66,.1);backdrop-filter:blur(10px);}
+.prize-strip{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;}
+.prize-chip{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.1);color:var(--gray);background:rgba(255,255,255,.03);transition:all .4s;white-space:nowrap;}
+.prize-chip.active{background:linear-gradient(135deg,var(--gold-dark),var(--gold));color:var(--blue-deep);border-color:var(--gold);font-weight:700;box-shadow:0 0 12px rgba(245,200,66,.4);transform:scale(1.1);}
+.prize-chip.passed{color:rgba(245,200,66,.4);border-color:rgba(245,200,66,.2);}
+.prize-chip.milestone{border-color:rgba(0,230,118,.4);color:var(--green);}
+.prize-chip.milestone.passed{background:rgba(0,230,118,.12);}
+
+/* timer */
+.timer-text{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--gray);width:100%;max-width:920px;margin-bottom:4px;}
+.timer-wrap{width:100%;max-width:920px;height:5px;background:rgba(255,255,255,.06);margin-bottom:12px;overflow:hidden;}
+.timer-bar{height:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));transition:width 1s linear;}
+
+/* question */
+.question-area{width:100%;max-width:920px;background:rgba(13,33,69,.88);border-left:1px solid rgba(245,200,66,.15);border-right:1px solid rgba(245,200,66,.15);padding:26px 32px 20px;backdrop-filter:blur(10px);}
+.question-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.q-badge{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;border-radius:20px;}
+.q-badge.easy{background:rgba(0,230,118,.15);color:var(--green);border:1px solid rgba(0,230,118,.3);}
+.q-badge.medium{background:rgba(245,200,66,.15);color:var(--gold);border:1px solid rgba(245,200,66,.3);}
+.q-badge.hard{background:rgba(255,23,68,.15);color:var(--red);border:1px solid rgba(255,23,68,.3);}
+.q-number{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;color:var(--gray);}
+.question-text{font-size:clamp(15px,2.1vw,19px);font-weight:500;line-height:1.55;color:var(--white);margin-bottom:22px;min-height:65px;}
+.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.option-btn{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:15px 18px;cursor:pointer;transition:all .25s;text-align:left;color:var(--white);font-family:'Barlow',sans-serif;font-size:14px;line-height:1.45;display:flex;align-items:flex-start;gap:12px;}
+.option-btn:hover:not(:disabled){background:rgba(245,200,66,.1);border-color:rgba(245,200,66,.5);transform:translateX(3px);}
+.option-letter{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);min-width:22px;line-height:1;margin-top:1px;}
+.option-btn.selected{background:rgba(66,165,245,.15);border-color:var(--blue-accent);}
+.option-btn.correct{background:rgba(0,230,118,.2);border-color:var(--green);animation:correctFlash .6s ease;}
+.option-btn.wrong{background:rgba(255,23,68,.15);border-color:var(--red);}
+.option-btn.eliminated{opacity:.15!important;pointer-events:none;}
+@keyframes correctFlash{0%,100%{box-shadow:0 0 0 rgba(0,230,118,0)}50%{box-shadow:0 0 30px rgba(0,230,118,.5)}}
+
+/* feedback inline */
+.feedback-box{margin-top:14px;padding:14px 18px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.25);border-radius:10px;font-size:13px;color:rgba(240,244,255,.85);line-height:1.6;display:none;}
+.feedback-box.wrong-fb{background:rgba(255,23,68,.08);border-color:rgba(255,23,68,.25);}
+.feedback-box.show{display:block;}
+.feedback-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.feedback-label.ok{color:var(--green);}
+.feedback-label.no{color:var(--red);}
+
+/* lifelines + nav */
+.lifelines-bar{width:100%;max-width:920px;background:rgba(10,22,40,.75);border-left:1px solid rgba(245,200,66,.1);border-right:1px solid rgba(245,200,66,.1);border-bottom:1px solid rgba(245,200,66,.1);border-radius:0 0 16px 16px;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(10px);margin-bottom:20px;gap:10px;flex-wrap:wrap;}
+.lifelines-group{display:flex;gap:10px;}
+.lifeline-btn{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.15);border-radius:50%;width:46px;height:46px;font-size:16px;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;position:relative;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--white);}
+.lifeline-btn:hover:not(:disabled){background:rgba(245,200,66,.15);border-color:var(--gold);transform:scale(1.1);}
+.lifeline-btn:disabled{opacity:.3;cursor:not-allowed;filter:grayscale(1);}
+.lifeline-label{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gray);white-space:nowrap;}
+.btn-next{background:linear-gradient(135deg,var(--gold-dark),var(--gold));border:none;border-radius:10px;padding:11px 28px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--blue-deep);cursor:pointer;transition:all .3s;display:none;}
+.btn-next.show{display:block;}
+.btn-next:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,200,66,.4);}
+
+/* ── RESULTADO ── */
+#resultScreen{flex-direction:column;}
+.result-card{background:linear-gradient(145deg,rgba(13,33,69,.97),rgba(10,22,40,.99));border-radius:24px;padding:48px 44px;width:100%;max-width:580px;text-align:center;border:1px solid rgba(245,200,66,.2);box-shadow:0 40px 100px rgba(0,0,0,.7);}
+.result-icon{font-size:80px;margin-bottom:16px;}
+.result-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,48px);letter-spacing:4px;margin-bottom:10px;}
+.result-title.pass{background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.result-title.fail{color:var(--red);}
+.result-score-big{font-family:'Bebas Neue',sans-serif;font-size:72px;letter-spacing:2px;color:var(--gold-light);text-shadow:0 0 30px rgba(245,200,66,.5);line-height:1;}
+.result-score-sub{font-size:14px;color:var(--gray);margin-bottom:24px;}
+.result-msg{font-size:15px;color:var(--white);line-height:1.65;margin-bottom:28px;opacity:.9;}
+.result-stats{display:flex;gap:12px;justify-content:center;margin-bottom:28px;flex-wrap:wrap;}
+.stat-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 20px;text-align:center;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--gold);}
+.stat-label{font-size:11px;color:var(--gray);font-family:'Barlow Condensed',sans-serif;letter-spacing:1px;text-transform:uppercase;}
+.btn-cert{background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));border:none;border-radius:12px;padding:18px 40px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;color:var(--blue-deep);cursor:pointer;transition:all .3s;box-shadow:0 8px 30px rgba(245,200,66,.35);margin-bottom:12px;width:100%;}
+.btn-cert:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(245,200,66,.5);}
+.btn-retry{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 32px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--white);cursor:pointer;transition:all .3s;width:100%;}
+.btn-retry:hover{background:rgba(255,255,255,.14);}
+
+/* ── CERTIFICADO ── */
+#certScreen{background:linear-gradient(135deg,#f5f0e8 0%,#fdf8f0 50%,#f5f0e8 100%);flex-direction:column;gap:20px;}
+.cert-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.cert-btn{padding:14px 32px;border-radius:10px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;cursor:pointer;border:none;transition:all .3s;}
+.cert-btn.primary{background:linear-gradient(135deg,#1a3a6e,#2a5298);color:#fff;box-shadow:0 6px 20px rgba(26,58,110,.4);}
+.cert-btn.secondary{background:rgba(26,58,110,.08);color:#1a3a6e;border:2px solid rgba(26,58,110,.3);}
+.cert-btn:hover{transform:translateY(-2px);}
+
+/* certificate canvas wrapper */
+#certWrapper{width:100%;max-width:900px;position:relative;}
+#certCanvas{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.25);}
+
+/* modals */
+.modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(5,10,20,.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn .4s ease;}
+.modal-overlay.hidden{display:none;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-card{background:linear-gradient(145deg,rgba(13,33,69,.99),rgba(10,22,40,1));border-radius:24px;padding:44px 36px;width:100%;max-width:480px;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.8);animation:scaleIn .4s cubic-bezier(.34,1.56,.64,1);border:1px solid rgba(245,200,66,.2);}
+@keyframes scaleIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-icon{font-size:64px;margin-bottom:14px;}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:3px;margin-bottom:10px;}
+.modal-title.green{color:var(--green);}
+.modal-title.red{color:var(--red);}
+.modal-title.gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.modal-sub{font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:8px;}
+.modal-correct{font-size:13px;color:var(--gray);margin:10px 0 20px;}
+.modal-correct strong{color:var(--white);}
+.btn-modal{background:linear-gradient(135deg,var(--gold-dark),var(--gold));border:none;border-radius:10px;padding:14px 36px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--blue-deep);cursor:pointer;transition:all .3s;box-shadow:0 8px 25px rgba(245,200,66,.3);margin:4px;}
+.btn-modal:hover{transform:translateY(-2px);}
+.phone-text{font-size:14px;line-height:1.7;color:var(--white);background:rgba(255,255,255,.04);border-radius:12px;padding:18px;margin:14px 0;text-align:left;border:1px solid rgba(255,255,255,.1);}
+.audience-bars{display:flex;gap:10px;justify-content:center;align-items:flex-end;height:110px;margin:16px 0;}
+.audience-col{display:flex;flex-direction:column;align-items:center;gap:5px;width:56px;}
+.audience-bar-wrap{width:42px;background:rgba(255,255,255,.06);border-radius:4px;height:90px;display:flex;align-items:flex-end;overflow:hidden;}
+.audience-bar-fill{width:100%;border-radius:4px;background:linear-gradient(180deg,var(--blue-accent),var(--teal));transition:height 1s cubic-bezier(.34,1.56,.64,1);}
+.audience-bar-pct{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--white);}
+.audience-bar-letter{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);}
+
+.confetti-piece{position:fixed;border-radius:2px;animation:confettiFall linear forwards;z-index:200;pointer-events:none;}
+@keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+@media(max-width:600px){
+  .register-card{padding:32px 20px;}
+  .form-row{grid-template-columns:1fr;}
+  .options-grid{grid-template-columns:1fr;}
+  .game-header{flex-wrap:wrap;gap:8px;}
+  .lifelines-bar{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<!-- ═══ TELA 1: REGISTRO ═══ -->
+<div class="screen" id="registerScreen">
+  <div class="register-card">
+    <div class="course-badge">📜 Curso com Certificado</div>
+    <div class="logo-icon">🏛️</div>
+    <h1>Show do SUAS</h1>
+    <p class="sub1">Curso Interativo · Portaria 1.043/2024</p>
+    <p class="sub2">Aprenda gestão e financiamento do SUAS de forma divertida</p>
+    <div class="course-info">
+      <div class="info-chip">📋 <span>15 questões</span></div>
+      <div class="info-chip">✅ <span>Aprovação: 70%</span></div>
+      <div class="info-chip">🏆 <span>Certificado digital</span></div>
+      <div class="info-chip">⏱️ <span>~20 minutos</span></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nome completo</label>
+        <input type="text" id="playerName" placeholder="Seu nome">
+      </div>
+      <div class="form-group">
+        <label>CPF</label>
+        <input type="text" id="playerCPF" placeholder="000.000.000-00" maxlength="14">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Município / UF</label>
+        <input type="text" id="playerCity" placeholder="Ex: São Luís / MA">
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" id="playerEmail" placeholder="seu@email.com">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Função na Secretaria</label>
+      <select id="playerRole">
+        <option value="">Selecione sua função</option>
+        <option>Secretário(a) Municipal de Assistência Social</option>
+        <option>Coordenador(a) do CRAS</option>
+        <option>Coordenador(a) do CREAS</option>
+        <option>Assistente Social</option>
+        <option>Psicólogo(a)</option>
+        <option>Técnico(a) de Referência</option>
+        <option>Orientador(a) Social</option>
+        <option>Educador(a) Social</option>
+        <option>Auxiliar/Apoio Administrativo</option>
+        <option>Gestor(a) do FMAS</option>
+        <option>Conselheiro(a) do CMAS</option>
+        <option>Coordenador(a) de Vigilância Socioassistencial</option>
+        <option>Outro</option>
+      </select>
+    </div>
+    <button class="btn-start" onclick="startGame()">🎯 INICIAR O CURSO</button>
+  </div>
+</div>
+
+<!-- ═══ TELA 2: JOGO ═══ -->
+<div class="screen hidden" id="gameScreen">
+  <!-- header -->
+  <div class="game-header">
+    <div>
+      <div class="player-name" id="displayName">—</div>
+      <div class="player-meta" id="displayMeta">—</div>
+    </div>
+    <div class="score-display">
+      <div class="score-label">ACERTOS</div>
+      <div class="score-value" id="scoreDisplay">0 / 0</div>
+    </div>
+    <div class="prize-display">
+      <div class="prize-label">QUESTÃO</div>
+      <div class="prize-value" id="qCounter">1 / 15</div>
+    </div>
+  </div>
+  <!-- progress -->
+  <div class="prog-wrap"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
+  <!-- prize strip -->
+  <div class="prize-strip-wrap">
+    <div class="prize-strip" id="prizeStrip"></div>
+  </div>
+  <!-- timer -->
+  <div class="timer-text" id="timerText">30</div>
+  <div class="timer-wrap"><div class="timer-bar" id="timerBar" style="width:100%"></div></div>
+  <!-- question -->
+  <div class="question-area">
+    <div class="question-meta">
+      <div class="q-badge" id="qBadge">Fácil</div>
+      <div class="q-number" id="qNumber">Pergunta 1 de 15</div>
+    </div>
+    <div class="question-text" id="questionText"></div>
+    <div class="options-grid" id="optionsGrid"></div>
+    <div class="feedback-box" id="feedbackBox">
+      <div class="feedback-label" id="feedbackLabel"></div>
+      <span id="feedbackText"></span>
+    </div>
+  </div>
+  <!-- lifelines + next -->
+  <div class="lifelines-bar">
+    <div class="lifelines-group">
+      <button class="lifeline-btn" id="ll50" onclick="useLifeline('fifty')" title="50:50">50/50<span class="lifeline-label">50:50</span></button>
+      <button class="lifeline-btn" id="llPhone" onclick="useLifeline('phone')" title="Expert">📞<span class="lifeline-label">Expert</span></button>
+      <button class="lifeline-btn" id="llAudience" onclick="useLifeline('audience')" title="Plateia">👥<span class="lifeline-label">Plateia</span></button>
+    </div>
+    <button class="btn-next" id="btnNext" onclick="nextQuestion()">PRÓXIMA ➜</button>
+  </div>
+</div>
+
+<!-- ═══ TELA 3: RESULTADO ═══ -->
+<div class="screen hidden" id="resultScreen">
+  <div class="result-card">
+    <div class="result-icon" id="resultIcon">🏆</div>
+    <div class="result-title" id="resultTitle">APROVADO!</div>
+    <div class="result-score-big" id="resultScore">0</div>
+    <div class="result-score-sub" id="resultScoreSub">de 15 questões corretas</div>
+    <p class="result-msg" id="resultMsg"></p>
+    <div class="result-stats">
+      <div class="stat-box"><div class="stat-num" id="statAcertos">0</div><div class="stat-label">Acertos</div></div>
+      <div class="stat-box"><div class="stat-num" id="statErros">0</div><div class="stat-label">Erros</div></div>
+      <div class="stat-box"><div class="stat-num" id="statPct">0%</div><div class="stat-label">Aproveitamento</div></div>
+    </div>
+    <button class="btn-cert" id="btnCert" onclick="showCertificate()" style="display:none;">🏆 GERAR MEU CERTIFICADO</button>
+    <button class="btn-retry" onclick="restartGame()">🔄 TENTAR NOVAMENTE</button>
+  </div>
+</div>
+
+<!-- ═══ TELA 4: CERTIFICADO ═══ -->
+<div class="screen hidden" id="certScreen">
+  <div id="certWrapper">
+    <canvas id="certCanvas"></canvas>
+  </div>
+  <div class="cert-actions">
+    <button class="cert-btn primary" onclick="downloadCert()">⬇️ BAIXAR CERTIFICADO (PNG)</button>
+    <button class="cert-btn secondary" onclick="printCert()">🖨️ IMPRIMIR</button>
+    <button class="cert-btn secondary" onclick="backToResult()">← VOLTAR</button>
+  </div>
+</div>
+
+<!-- MODALS -->
+<div class="modal-overlay hidden" id="phoneModal">
+  <div class="modal-card">
+    <div class="modal-icon">📞</div>
+    <div class="modal-title gold">CONSULTANDO EXPERT</div>
+    <div class="phone-text" id="phoneText"></div>
+    <button class="btn-modal" onclick="hideModal('phoneModal')">OK, ENTENDI</button>
+  </div>
+</div>
+<div class="modal-overlay hidden" id="audienceModal">
+  <div class="modal-card">
+    <div class="modal-icon">👥</div>
+    <div class="modal-title gold">AJUDA DA PLATEIA</div>
+    <div class="audience-bars" id="audienceBars"></div>
+    <button class="btn-modal" onclick="hideModal('audienceModal')">OBRIGADO!</button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  BANCO DE PERGUNTAS — 30 questões — Portaria 1.043/2024
+// ═══════════════════════════════════════════════════════
+const allQuestions = {
+  easy: [
+    { q:"Qual portaria substituiu a Portaria MDS nº 113/2015 como norma principal do cofinanciamento do SUAS na modalidade fundo a fundo?", options:["A) Portaria MDS nº 1.044/2024","B) Portaria MDS nº 1.043/2024","C) Resolução CNAS nº 33/2012","D) Portaria MDS nº 904/2023"], answer:1, feedback:"A Portaria MDS nº 1.043, de 24 de dezembro de 2024, substituiu a Portaria MDS nº 113/2015. Entrou em vigor em 1º de janeiro de 2025." },
+    { q:"Quantos Blocos de Financiamento compõem o SUAS, conforme o art. 3º da Portaria MDS nº 1.043/2024?", options:["A) Dois blocos","B) Três blocos","C) Quatro blocos","D) Cinco blocos"], answer:2, feedback:"São quatro blocos: I — PSB, II — PSE, III — Gestão do SUAS e IV — Gestão do Bolsa Família e CadÚnico." },
+    { q:"Qual é o equipamento público referência para a Proteção Social Básica, cujos serviços são financiados pelo Bloco I?", options:["A) CREAS","B) CRAS","C) Centro POP","D) Casa Lar"], answer:1, feedback:"O CRAS — Centro de Referência de Assistência Social — é a porta de entrada da PSB e oferta o PAIF e o SCFV." },
+    { q:"Como se denomina o novo sistema de prestação de contas introduzido pela Portaria MDS nº 1.043/2024?", options:["A) SUAS WEB","B) CadSUAS","C) AgilizaSUAS","D) BB Gestão Ágil"], answer:2, feedback:"O AgilizaSUAS é o sistema eletrônico de prestação de contas dos Blocos de Financiamento, substituindo o Demonstrativo Sintético (art. 37)." },
+    { q:"Os recursos federais dos blocos de financiamento são transferidos pelo FNAS aos municípios em qual modalidade?", options:["A) Por convênio individualizado","B) Fundo a fundo","C) Emenda parlamentar","D) Repasse estadual"], answer:1, feedback:"O modelo fundo a fundo (FNAS → FMAS municipal) é o mecanismo central e direto do cofinanciamento do SUAS." },
+    { q:"Qual é a diferença entre BLOQUEIO e SUSPENSÃO de recursos segundo a Portaria MDS nº 1.043/2024?", options:["A) São sinônimos","B) No bloqueio há retroatividade ao regularizar; na suspensão não há retroatividade","C) O bloqueio é definitivo; a suspensão é temporária","D) A suspensão é aplicada pelo TCU; o bloqueio pelo FNAS"], answer:1, feedback:"No bloqueio, os repasses são restabelecidos retroativamente. Na suspensão, os valores do período suspenso não são repassados (art. 2º, incisos II e III)." },
+    { q:"O Bloco de Financiamento da Gestão do SUAS tem como componente principal qual índice?", options:["A) IGD-PBF","B) PVAC","C) IGD-SUAS","D) AEPETI"], answer:2, feedback:"O Bloco III tem como componente o IGD-SUAS — Índice de Gestão Descentralizada do SUAS (art. 5º)." },
+    { q:"Os saldos dos Blocos I e II existentes em 31 de dezembro podem ser reprogramados para o exercício seguinte?", options:["A) Não — devem ser devolvidos ao FNAS via GRU","B) Sim — permanecem na mesma conta do bloco para uso no ano seguinte","C) Sim — mas precisam de autorização do CNAS","D) Não — devem ser transferidos para a conta do município"], answer:1, feedback:"Os saldos dos Blocos I e II podem ser reprogramados para o exercício seguinte dentro do respectivo bloco, sem devolução (art. 34)." },
+    { q:"Programas e projetos como o Criança Feliz são repassados pelos blocos de financiamento?", options:["A) Sim — pelo Bloco I","B) Sim — pelo Bloco II","C) Não — têm contas correntes específicas e regulação própria","D) Sim — pelo Bloco IV"], answer:2, feedback:"Programas e projetos não são repassados pelos blocos — possuem contas correntes específicas separadas (art. 9º)." },
+    { q:"Os rendimentos das aplicações financeiras dos recursos dos blocos devem ser utilizados como?", options:["A) Devolvidos ao FNAS ao fim do exercício","B) Nas mesmas finalidades do recurso original, com as mesmas regras de prestação de contas","C) Livremente pelo município para qualquer despesa","D) Transferidos para a conta do CMAS"], answer:1, feedback:"Os rendimentos integram o saldo do bloco e devem ser usados nas mesmas finalidades, com as mesmas condições de prestação de contas (art. 14, §3º)." }
+  ],
+  medium: [
+    { q:"Qual GND classifica a compra de equipamentos e materiais permanentes NOVOS para os serviços?", options:["A) GND 1 — Pessoal","B) GND 3 — Outras Despesas Correntes","C) GND 4 — Investimentos","D) GND 5 — Inversões Financeiras"], answer:2, feedback:"A aquisição de equipamentos, materiais permanentes e veículos novos é classificada no GND 4 — Investimentos (art. 20, inciso V)." },
+    { q:"O prazo mínimo de vinculação de um VEÍCULO adquirido com recursos dos blocos à sua finalidade original é de:", options:["A) 1 ano","B) 3 anos","C) 5 anos","D) 10 anos"], answer:2, feedback:"Veículos devem permanecer vinculados à finalidade do recurso por no mínimo 5 anos a partir da entrega do bem (art. 23, §3º, II)." },
+    { q:"O prazo mínimo de vinculação de EQUIPAMENTOS e MATERIAIS PERMANENTES adquiridos com recurso federal é de:", options:["A) 1 ano","B) 2 anos","C) 3 anos","D) 5 anos"], answer:2, feedback:"Equipamentos e materiais permanentes devem permanecer vinculados à finalidade por no mínimo 3 anos (art. 23, §3º, I)." },
+    { q:"É permitido usar recursos dos blocos para pagar o ALUGUEL de imóvel privado onde funciona o CRAS?", options:["A) Não — o imóvel deve ser sempre da prefeitura","B) Sim — a locação para oferta dos serviços é despesa permitida em GND 3","C) Sim — mas somente com autorização do CNAS","D) Não — apenas obras em imóvel público são permitidas"], answer:1, feedback:"A locação de imóvel privado para a oferta dos serviços é permitida (GND 3). Porém, qualquer reparo no imóvel alugado é proibido com recurso federal." },
+    { q:"Qual despesa com veículos é PROIBIDA com recursos dos blocos de financiamento?", options:["A) Combustível para o veículo do SUAS","B) Manutenção mecânica do veículo","C) IPVA, seguro, multas e emplacamento","D) Compra de novo veículo seguindo a MOB-SUAS"], answer:2, feedback:"São vedadas despesas com IPVA, seguro, multas de trânsito, emplacamento e documentação de veículos, mesmo os usados nos serviços (art. 27, VI)." },
+    { q:"O Conselho Municipal de Assistência Social deve emitir seu parecer no AgilizaSUAS até qual prazo (exercício normal)?", options:["A) 31 de dezembro do ano-base","B) 1º de março do exercício seguinte","C) 30 de abril do exercício subsequente ao ano-base","D) 30 de junho do exercício seguinte"], answer:2, feedback:"O CMAS tem até 30 de abril do exercício subsequente ao ano-base para emitir o parecer no AgilizaSUAS (art. 37, §6º)." },
+    { q:"É vedado usar recurso federal para ressarcir o município por gastos realizados com recursos próprios na assistência social?", options:["A) Não — desde que o CMAS autorize","B) Não — se o valor for inferior ao limite do CADIN","C) Sim — o ressarcimento é expressamente vedado pelo art. 28","D) Não — se registrado no AgilizaSUAS"], answer:2, feedback:"O art. 28 veda expressamente o ressarcimento. Isso compromete o nexo de causalidade e pode gerar Tomada de Contas Especial." },
+    { q:"Qual instrumento deve ser usado para devolver ao FNAS recursos aplicados irregularmente, com atualização monetária?", options:["A) Transferência direta para conta do MDS","B) GRU — Guia de Recolhimento da União, atualizada pela ferramenta do TCU","C) Nota de crédito no SIAFI","D) Depósito na conta corrente do FNAS"], answer:1, feedback:"A devolução de recursos irregulares é feita via GRU ao FNAS, com atualização monetária calculada pela ferramenta do TCU (art. 29)." },
+    { q:"Qual o prazo para o gestor lançar as informações e encaminhar a prestação de contas ao CMAS no AgilizaSUAS (exercício normal)?", options:["A) Até 31 de dezembro do ano-base","B) Até 1º de março do exercício subsequente","C) Até 30 de abril do exercício seguinte","D) Até 30 de junho"], answer:1, feedback:"O gestor tem até 1º de março do exercício subsequente ao ano-base para finalizar e encaminhar ao CMAS (art. 37, §3º)." },
+    { q:"Os recursos dos blocos só podem ser aplicados financeiramente em:", options:["A) Qualquer produto financeiro, desde que autorizado pelo CMAS","B) Bolsa de valores, LCI ou LCA para melhor rentabilidade","C) Poupança ou fundo de curto prazo lastreado em títulos públicos — vedados fundos com risco de perda","D) CDB de bancos privados com maior rentabilidade"], answer:2, feedback:"São vedadas aplicações com risco de perda (bolsa de valores, câmbio, LCI, LCA). Só são permitidas poupança ou fundos de curto prazo lastreados em títulos públicos (art. 14)." }
+  ],
+  hard: [
+    { q:"A Resolução CNAS nº 17/2016 permite o uso de até qual percentual dos recursos do FNAS para pagamento das equipes de referência?", options:["A) 50%","B) 60%","C) 70%","D) 100%"], answer:3, feedback:"A Res. CNAS nº 17/2016 permite até 100% dos recursos do FNAS para pagamento das equipes de referência, desde que não prejudique a qualidade e continuidade dos serviços (art. 22)." },
+    { q:"É permitido contratar uma OSC para FORNECER MÃO DE OBRA de assistentes sociais e psicólogos nas equipes de referência?", options:["A) Sim, se a OSC estiver inscrita no CMAS","B) Sim, se previsto no PMAS","C) Não — é vedada a terceirização das equipes de referência por OSC, cooperativa, OS, OSCIP ou empresa","D) Sim, quando não houver servidores suficientes"], answer:2, feedback:"O art. 22, §7º, IV proíbe expressamente a terceirização das equipes de referência por OSCs, cooperativas, OS, OSCIP ou empresas fornecedoras de mão de obra." },
+    { q:"O que acontece com o IGD-SUAS se o CMAS não informar a aprovação das contas dentro do prazo?", options:["A) Bloqueio com transferência retroativa ao regularizar","B) Suspensão — sem retroatividade — a partir do mês subsequente ao descumprimento","C) O município recebe notificação mas os repasses continuam","D) O TCU é comunicado para instaurar TCE"], answer:1, feedback:"A suspensão do IGD-SUAS ocorre a partir do mês seguinte ao descumprimento do prazo, sem pagamento retroativo das parcelas suspensas (art. 15)." },
+    { q:"Um veículo adquirido com recurso do Bloco I (PSB) pode ser destinado ao Bloco II (PSE) antes de 5 anos?", options:["A) Sim, a qualquer momento com registro no AgilizaSUAS","B) Sim, desde que o CMAS autorize","C) Não — durante 5 anos deve permanecer vinculado à PSB, salvo devolução em pecúnia do valor ao FNAS","D) Sim, se o serviço original for encerrado"], answer:2, feedback:"O bem deve permanecer vinculado à finalidade da PSB pelos 5 anos. A única saída é devolver o valor de aquisição ao FNAS com recursos próprios (art. 23, §5º)." },
+    { q:"Por quanto tempo devem ser guardados os documentos dos Blocos I e II, contados da decisão final do FNAS?", options:["A) 5 anos","B) 7 anos conforme legislação tributária","C) 10 anos a partir da decisão do ordenador de despesas do FNAS","D) 15 anos conforme o TCU"], answer:2, feedback:"Os documentos dos Blocos I e II devem ser mantidos por no mínimo 10 anos, contados da decisão sobre a regularidade das contas pelo FNAS (art. 63, §2º)." },
+    { q:"Quais despesas são VEDADAS nos Termos de Colaboração com OSCs custeados com recursos dos blocos?", options:["A) Pagamento da equipe que presta o serviço","B) Gêneros alimentícios usados nas oficinas","C) Gerenciamento administrativo da OSC, remuneração de dirigentes, compra de bens e obras nos imóveis da entidade","D) Capacitação dos profissionais que atendem os usuários"], answer:2, feedback:"O art. 25, §4º veda: gestão administrativa da OSC, remuneração de dirigentes, aquisição de bens permanentes pela entidade e obras/reparos em imóveis das OSCs." },
+    { q:"Segundo o art. 46, qual decisão do FNAS é tomada quando há OMISSÃO total no dever de prestar contas?", options:["A) Aprovação com ressalvas","B) Reprovação parcial com notificação","C) Encaminhamento para Tomada de Contas Especial (TCE)","D) Reprovação total com devolução imediata"], answer:2, feedback:"O art. 46, inciso IV determina o encaminhamento para TCE nos casos de omissão no dever de prestar contas." },
+    { q:"A Portaria SNAS/MDS nº 47/2025 citada no Guia Prático dos Blocos FNAS tem qual função?", options:["A) Define os blocos de financiamento","B) Define o rol padronizado de equipamentos, materiais permanentes e veículos que podem ser adquiridos com recursos do SUAS","C) Define os pisos de cofinanciamento","D) Regulamenta o FNAS e o Decreto nº 7.788/2012"], answer:1, feedback:"A Portaria MDS/SNAS nº 47/2025 substituiu a Portaria SNAS nº 104/2024 e define a lista padronizada de itens que podem ser adquiridos com recursos do cofinanciamento federal." },
+    { q:"Qual é a principal inovação da Portaria MDS nº 1.043/2024 em relação à norma anterior quanto à prestação de contas?", options:["A) Extinção do papel do CMAS na análise","B) O AgilizaSUAS como único meio válido de prestação de contas, substituindo o Demonstrativo Sintético","C) Transferência da análise do FNAS para o TCU","D) Criação de novo bloco para programas"], answer:1, feedback:"A principal inovação é o AgilizaSUAS, sistema eletrônico que substitui o Demonstrativo Sintético Anual como instrumento de prestação de contas (art. 37)." },
+    { q:"O art. 16 da Portaria veda pagamentos dos recursos federais por qual meio?", options:["A) TED e transferência eletrônica","B) Ordem bancária","C) Cheques, dinheiro em espécie, cartões corporativos ou meios que não identifiquem o destinatário","D) Transferência entre contas do mesmo banco"], answer:2, feedback:"Os pagamentos devem ser exclusivamente por meio eletrônico com identificação do destinatário (TED, OB, etc.). São proibidos cheques, espécie, cartões corporativos e outros meios sem rastreabilidade (art. 16)." }
+  ]
+};
+
+const prizes = [
+  {value:1000,label:"R$ 1.000",difficulty:"easy",milestone:false},
+  {value:2000,label:"R$ 2.000",difficulty:"easy",milestone:false},
+  {value:3000,label:"R$ 3.000",difficulty:"easy",milestone:false},
+  {value:5000,label:"R$ 5.000",difficulty:"easy",milestone:true},
+  {value:10000,label:"R$ 10.000",difficulty:"easy",milestone:false},
+  {value:20000,label:"R$ 20.000",difficulty:"medium",milestone:false},
+  {value:30000,label:"R$ 30.000",difficulty:"medium",milestone:false},
+  {value:50000,label:"R$ 50.000",difficulty:"medium",milestone:true},
+  {value:75000,label:"R$ 75.000",difficulty:"medium",milestone:false},
+  {value:100000,label:"R$ 100.000",difficulty:"medium",milestone:false},
+  {value:200000,label:"R$ 200.000",difficulty:"hard",milestone:false},
+  {value:300000,label:"R$ 300.000",difficulty:"hard",milestone:false},
+  {value:500000,label:"R$ 500.000",difficulty:"hard",milestone:true},
+  {value:750000,label:"R$ 750.000",difficulty:"hard",milestone:false},
+  {value:1000000,label:"R$ 1.000.000",difficulty:"hard",milestone:false}
+];
+
+const PASS_THRESHOLD = 0.70; // 70% = 11/15
+
+let state = {
+  player:{name:'',cpf:'',city:'',email:'',role:''},
+  currentQ:0, questions:[], hits:0,
+  lifelines:{fifty:true,phone:true,audience:true},
+  timer:null, timeLeft:30, answered:false,
+  certCode:''
+};
+
+// STARS
+(function(){const c=document.getElementById('stars');for(let i=0;i<120;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2.5+0.5;s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--t:${(Math.random()*4+2).toFixed(1)}s;animation-delay:${(Math.random()*5).toFixed(2)}s;`;c.appendChild(s);}})();
+
+// CPF mask
+document.getElementById('playerCPF').addEventListener('input',function(){
+  let v=this.value.replace(/\D/g,'');
+  if(v.length>3) v=v.slice(0,3)+'.'+v.slice(3);
+  if(v.length>7) v=v.slice(0,7)+'.'+v.slice(7);
+  if(v.length>11) v=v.slice(0,11)+'-'+v.slice(11);
+  this.value=v.slice(0,14);
+});
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function startGame(){
+  const name=document.getElementById('playerName').value.trim();
+  const cpf=document.getElementById('playerCPF').value.trim();
+  const city=document.getElementById('playerCity').value.trim();
+  const email=document.getElementById('playerEmail').value.trim();
+  const role=document.getElementById('playerRole').value;
+  if(!name||!cpf||!city||!email||!role){alert('Por favor, preencha todos os campos antes de começar.');return;}
+  if(cpf.replace(/\D/g,'').length<11){alert('CPF inválido. Digite todos os 11 dígitos.');return;}
+  state.player={name,cpf,city,email,role};
+  state.currentQ=0; state.hits=0;
+  state.lifelines={fifty:true,phone:true,audience:true};
+  state.certCode=generateCode();
+  const eq=shuffle([...allQuestions.easy]).slice(0,5);
+  const mq=shuffle([...allQuestions.medium]).slice(0,5);
+  const hq=shuffle([...allQuestions.hard]).slice(0,5);
+  state.questions=[...eq,...mq,...hq];
+  show('gameScreen');
+  hide('registerScreen');
+  document.getElementById('displayName').textContent=name.toUpperCase();
+  document.getElementById('displayMeta').textContent=`${city} · ${role}`;
+  buildPrizeStrip();
+  loadQuestion();
+}
+
+function generateCode(){
+  const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code='SUAS-';
+  for(let i=0;i<4;i++){code+=chars[Math.floor(Math.random()*chars.length)];}
+  code+='-';
+  for(let i=0;i<4;i++){code+=chars[Math.floor(Math.random()*chars.length)];}
+  return code;
+}
+
+function buildPrizeStrip(){
+  const strip=document.getElementById('prizeStrip');
+  strip.innerHTML='';
+  prizes.forEach((p,i)=>{
+    const chip=document.createElement('div');
+    chip.className='prize-chip'+(p.milestone?' milestone':'');
+    chip.id=`chip${i}`;
+    chip.textContent=p.label;
+    strip.appendChild(chip);
+  });
+  updateStrip();
+}
+
+function updateStrip(){
+  prizes.forEach((p,i)=>{
+    const c=document.getElementById(`chip${i}`);
+    if(!c) return;
+    c.className='prize-chip'+(p.milestone?' milestone':'');
+    if(i===state.currentQ) c.classList.add('active');
+    else if(i<state.currentQ) c.classList.add('passed');
+  });
+}
+
+function loadQuestion(){
+  if(state.currentQ>=15){showResult();return;}
+  const qData=state.questions[state.currentQ];
+  const prize=prizes[state.currentQ];
+  state.answered=false;
+  document.getElementById('qCounter').textContent=`${state.currentQ+1} / 15`;
+  document.getElementById('scoreDisplay').textContent=`${state.hits} / ${state.currentQ}`;
+  document.getElementById('progBar').style.width=`${(state.currentQ/15)*100}%`;
+  const badge=document.getElementById('qBadge');
+  badge.className=`q-badge ${prize.difficulty}`;
+  badge.textContent={easy:'🟢 Fácil',medium:'🟡 Intermediário',hard:'🔴 Difícil'}[prize.difficulty];
+  document.getElementById('qNumber').textContent=`Pergunta ${state.currentQ+1} de 15`;
+  document.getElementById('questionText').textContent=qData.q;
+  // feedback hidden
+  const fb=document.getElementById('feedbackBox');
+  fb.className='feedback-box';
+  document.getElementById('btnNext').className='btn-next';
+  renderOptions(qData);
+  updateStrip();
+  updateLifelineBtns();
+  startTimer();
+}
+
+function renderOptions(qData,hidden=[]){
+  const grid=document.getElementById('optionsGrid');
+  grid.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{
+    const btn=document.createElement('button');
+    btn.className='option-btn'+(hidden.includes(i)?' eliminated':'');
+    btn.innerHTML=`<span class="option-letter">${l}</span><span>${qData.options[i].replace(/^[A-D]\) /,'')}</span>`;
+    btn.onclick=()=>selectAnswer(i);
+    btn.disabled=hidden.includes(i);
+    grid.appendChild(btn);
+  });
+}
+
+function startTimer(){
+  clearInterval(state.timer);
+  state.timeLeft=30; updateTimerUI();
+  state.timer=setInterval(()=>{
+    state.timeLeft--;updateTimerUI();
+    if(state.timeLeft<=0){clearInterval(state.timer);timeOut();}
+  },1000);
+}
+function updateTimerUI(){
+  document.getElementById('timerBar').style.width=(state.timeLeft/30*100)+'%';
+  document.getElementById('timerText').textContent=state.timeLeft;
+}
+function stopTimer(){clearInterval(state.timer);}
+
+function timeOut(){
+  if(state.answered) return;
+  state.answered=true;
+  disableAll();
+  const qData=state.questions[state.currentQ];
+  document.querySelectorAll('.option-btn')[qData.answer].classList.add('correct');
+  showFeedback(false,qData);
+}
+
+function selectAnswer(idx){
+  if(state.answered) return;
+  state.answered=true;
+  stopTimer();
+  const qData=state.questions[state.currentQ];
+  const btns=document.querySelectorAll('.option-btn');
+  btns[idx].classList.add('selected');
+  disableAll();
+  setTimeout(()=>{
+    const correct=(idx===qData.answer);
+    btns[idx].classList.remove('selected');
+    btns[idx].classList.add(correct?'correct':'wrong');
+    if(!correct) btns[qData.answer].classList.add('correct');
+    if(correct) state.hits++;
+    showFeedback(correct,qData);
+  },500);
+}
+
+function disableAll(){document.querySelectorAll('.option-btn').forEach(b=>{b.disabled=true;b.onclick=null;});}
+
+function showFeedback(correct,qData){
+  const fb=document.getElementById('feedbackBox');
+  const lbl=document.getElementById('feedbackLabel');
+  const txt=document.getElementById('feedbackText');
+  fb.className='feedback-box'+(correct?'':' wrong-fb')+' show';
+  lbl.className='feedback-label'+(correct?' ok':' no');
+  lbl.textContent=correct?'✅ CORRETO!':'❌ INCORRETO — Mas você aprendeu algo novo:';
+  txt.textContent=qData.feedback||'';
+  document.getElementById('scoreDisplay').textContent=`${state.hits} / ${state.currentQ+1}`;
+  document.getElementById('btnNext').className='btn-next show';
+}
+
+function nextQuestion(){
+  state.currentQ++;
+  if(state.currentQ>=15){showResult();return;}
+  loadQuestion();
+}
+
+function showResult(){
+  stopTimer();
+  const total=15, hits=state.hits;
+  const pct=Math.round((hits/total)*100);
+  const passed=(hits/total)>=PASS_THRESHOLD;
+  hide('gameScreen');
+  show('resultScreen');
+  document.getElementById('resultIcon').textContent=passed?'🏆':'📚';
+  const title=document.getElementById('resultTitle');
+  title.textContent=passed?'APROVADO(A)!':'CONTINUE ESTUDANDO!';
+  title.className='result-title '+(passed?'pass':'fail');
+  document.getElementById('resultScore').textContent=hits;
+  document.getElementById('resultScoreSub').textContent=`de ${total} questões corretas`;
+  document.getElementById('statAcertos').textContent=hits;
+  document.getElementById('statErros').textContent=total-hits;
+  document.getElementById('statPct').textContent=pct+'%';
+  const msgs={
+    pass: [
+      `Excelente, ${state.player.name.split(' ')[0]}! Você demonstrou domínio sobre a Portaria MDS nº 1.043/2024 e as regras dos Blocos de Financiamento do SUAS. Seu certificado está pronto para download!`,
+      `Parabéns! Com ${pct}% de aproveitamento, você está bem preparado(a) para aplicar as normas do SUAS no dia a dia da gestão municipal. Baixe seu certificado!`
+    ],
+    fail: [
+      `Você acertou ${pct}%, mas precisa de 70% para ser certificado(a). Não desanime — revise a Portaria MDS nº 1.043/2024 e tente novamente. Cada erro é uma lição!`,
+      `Boa tentativa! O mínimo para certificação é 70% (${Math.ceil(total*0.7)} acertos). Você chegou a ${hits}. Revise os pontos em que errou e tente de novo!`
+    ]
+  };
+  const msgArr=msgs[passed?'pass':'fail'];
+  document.getElementById('resultMsg').textContent=msgArr[Math.floor(Math.random()*msgArr.length)];
+  if(passed){
+    document.getElementById('btnCert').style.display='block';
+    confetti();
+  }
+}
+
+function restartGame(){
+  stopTimer();
+  hide('resultScreen');hide('certScreen');
+  show('registerScreen');
+}
+
+// ─── LIFELINES ───
+function updateLifelineBtns(){
+  document.getElementById('ll50').disabled=!state.lifelines.fifty;
+  document.getElementById('llPhone').disabled=!state.lifelines.phone;
+  document.getElementById('llAudience').disabled=!state.lifelines.audience;
+}
+
+function useLifeline(type){
+  if(!state.lifelines[type]||state.answered) return;
+  state.lifelines[type]=false;
+  updateLifelineBtns();
+  const qData=state.questions[state.currentQ];
+  if(type==='fifty'){
+    const wrong=shuffle([0,1,2,3].filter(i=>i!==qData.answer)).slice(0,2);
+    renderOptions(qData,wrong);
+  } else if(type==='phone'){
+    const l=['A','B','C','D'];
+    const hints=[
+      `"Pelo que conheço da norma, apostaria na alternativa ${l[qData.answer]}. Faz mais sentido com o que a Portaria 1.043 estabelece..."`,
+      `"Difícil! Mas analisando a lógica do FNAS, acho que é a ${l[qData.answer]}. Vai com confiança!"`,
+      `"Pensa pela lógica da norma — a ${l[qData.answer]} é a que mais se alinha com as regras de execução. Vai nessa!"`
+    ];
+    document.getElementById('phoneText').textContent=shuffle(hints)[0];
+    showModal('phoneModal');
+  } else {
+    const ad=generateAudienceData(qData.answer);
+    const bars=document.getElementById('audienceBars');
+    bars.innerHTML='';
+    ['A','B','C','D'].forEach((l,i)=>{
+      const col=document.createElement('div');
+      col.className='audience-col';
+      col.innerHTML=`<div class="audience-bar-pct">${ad[i]}%</div><div class="audience-bar-wrap"><div class="audience-bar-fill" style="height:0%"></div></div><div class="audience-bar-letter">${l}</div>`;
+      bars.appendChild(col);
+    });
+    showModal('audienceModal');
+    setTimeout(()=>document.querySelectorAll('.audience-bar-fill').forEach((b,i)=>b.style.height=ad[i]+'%'),100);
+  }
+}
+
+function generateAudienceData(c){
+  const b=[0,0,0,0];
+  const cp=55+Math.floor(Math.random()*25);
+  b[c]=cp;
+  let r=100-cp;
+  const o=shuffle([0,1,2,3].filter(i=>i!==c));
+  o.forEach((idx,i)=>{if(i===o.length-1){b[idx]=r;}else{const p=Math.floor(Math.random()*r*.6);b[idx]=p;r-=p;}});
+  return b;
+}
+
+// ─── CERTIFICADO ───
+function showCertificate(){
+  hide('resultScreen');
+  show('certScreen');
+  generateCertificate();
+}
+
+function backToResult(){
+  hide('certScreen');
+  show('resultScreen');
+}
+
+// ═══════════════════════════════════════════════════════
+//  UTILITÁRIOS DE DESENHO
+// ═══════════════════════════════════════════════════════
+
+// Texto com quebra automática — retorna a próxima posição Y
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(' ');
+  let line = '';
+  let curY = y;
+  for (let n = 0; n < words.length; n++) {
+    const test = line + words[n] + ' ';
+    if (ctx.measureText(test).width > maxWidth && n > 0) {
+      ctx.fillText(line.trim(), x, curY);
+      line = words[n] + ' ';
+      curY += lineHeight;
+    } else {
+      line = test;
+    }
+  }
+  ctx.fillText(line.trim(), x, curY);
+  return curY + lineHeight;
+}
+
+// Texto centralizado com quebra automática — retorna próxima Y
+function wrapTextCenter(ctx, text, cx, y, maxWidth, lineHeight) {
+  const words = text.split(' ');
+  let line = '';
+  let curY = y;
+  for (let n = 0; n < words.length; n++) {
+    const test = line + words[n] + ' ';
+    if (ctx.measureText(test).width > maxWidth && n > 0) {
+      ctx.fillText(line.trim(), cx, curY);
+      line = words[n] + ' ';
+      curY += lineHeight;
+    } else {
+      line = test;
+    }
+  }
+  ctx.fillText(line.trim(), cx, curY);
+  return curY + lineHeight;
+}
+
+// Trunca texto ao limite de largura com reticências
+function fitText(ctx, text, maxWidth) {
+  if (ctx.measureText(text).width <= maxWidth) return text;
+  while (text.length > 1 && ctx.measureText(text + '…').width > maxWidth) {
+    text = text.slice(0, -1);
+  }
+  return text + '…';
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
+// ═══════════════════════════════════════════════════════
+//  GERADOR DE CERTIFICADO — layout em zonas fixas
+//  Altura total: 920px  |  Largura: 1280px
+//  Zona A  (  0 – 110): Faixa institucional superior
+//  Zona B  (110 – 220): Título CERTIFICADO
+//  Zona C  (220 – 310): Subtítulo + separador
+//  Zona D  (310 – 460): Nome + CPF
+//  Zona E  (460 – 580): Descrição do curso
+//  Zona F  (580 – 670): Boxes informativos (3 colunas)
+//  Zona G  (670 – 760): DATA DE EMISSÃO em destaque
+//  Zona H  (760 – 860): Assinaturas
+//  Zona I  (860 – 920): Rodapé / código
+// ═══════════════════════════════════════════════════════
+function generateCertificate() {
+  const canvas = document.getElementById('certCanvas');
+  const W = 1280, H = 920;
+  canvas.width = W;
+  canvas.height = H;
+  const ctx = canvas.getContext('2d');
+  const CX = W / 2; // centro horizontal
+
+  // ── Preparar dados do aluno ──
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+  const pct = Math.round((state.hits / 15) * 100);
+  const nome = state.player.name;
+  const nomeUp = nome.toUpperCase();
+
+  // ═══════════════════════
+  //  FUNDO
+  // ═══════════════════════
+  const bgGrad = ctx.createLinearGradient(0, 0, W, H);
+  bgGrad.addColorStop(0,   '#fef9f0');
+  bgGrad.addColorStop(0.45,'#fffef9');
+  bgGrad.addColorStop(1,   '#fef9f0');
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  // textura sutil (pontos)
+  ctx.fillStyle = 'rgba(26,58,110,0.018)';
+  for (let r = 0; r < H; r += 18) {
+    for (let c = 0; c < W; c += 18) {
+      ctx.beginPath();
+      ctx.arc(c, r, 1, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // ═══════════════════════
+  //  BORDAS
+  // ═══════════════════════
+  // Borda azul externa
+  ctx.strokeStyle = '#1a3a6e';
+  ctx.lineWidth = 12;
+  ctx.strokeRect(16, 16, W - 32, H - 32);
+
+  // Borda dourada interna
+  ctx.strokeStyle = '#c49a00';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(30, 30, W - 60, H - 60);
+
+  // Linha decorativa fina azul
+  ctx.strokeStyle = 'rgba(26,58,110,0.2)';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(40, 40, W - 80, H - 80);
+
+  // ═══════════════════════
+  //  ORNAMENTOS DE CANTO
+  // ═══════════════════════
+  const cornerDefs = [
+    { ox: 46, oy: 46,     dx: 1,  dy: 1  },
+    { ox: W-46, oy: 46,   dx: -1, dy: 1  },
+    { ox: 46, oy: H-46,   dx: 1,  dy: -1 },
+    { ox: W-46, oy: H-46, dx: -1, dy: -1 }
+  ];
+  cornerDefs.forEach(({ ox, oy, dx, dy }) => {
+    // losango central
+    ctx.save();
+    ctx.translate(ox, oy);
+    ctx.fillStyle = '#1a3a6e';
+    ctx.beginPath();
+    ctx.moveTo(0, -10); ctx.lineTo(10, 0);
+    ctx.lineTo(0, 10);  ctx.lineTo(-10, 0);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = '#c49a00';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.restore();
+    // traços em L
+    ctx.strokeStyle = '#1a3a6e';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(ox, oy + dy * 16);
+    ctx.lineTo(ox, oy + dy * 70);
+    ctx.moveTo(ox + dx * 16, oy);
+    ctx.lineTo(ox + dx * 70, oy);
+    ctx.stroke();
+  });
+
+  // ═══════════════════════
+  //  ZONA A — FAIXA SUPERIOR (0–108)
+  // ═══════════════════════
+  const topGrad = ctx.createLinearGradient(0, 46, W, 46);
+  topGrad.addColorStop(0,   '#0d2145');
+  topGrad.addColorStop(0.5, '#1a3a6e');
+  topGrad.addColorStop(1,   '#0d2145');
+  ctx.fillStyle = topGrad;
+  ctx.fillRect(42, 44, W - 84, 62);
+
+  // Linha dourada acima e abaixo da faixa
+  ctx.fillStyle = '#c49a00';
+  ctx.fillRect(42, 44, W - 84, 2);
+  ctx.fillRect(42, 104, W - 84, 2);
+
+  ctx.fillStyle = '#FFE082';
+  ctx.font = 'bold 15px Cinzel, Georgia, serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('MACRO CONSULTORIA E TREINAMENTO  ✦  SISTEMA ÚNICO DE ASSISTÊNCIA SOCIAL — SUAS', CX, 80);
+
+  // ═══════════════════════
+  //  ZONA B — TÍTULO (110–210)
+  // ═══════════════════════
+  ctx.font = 'bold 78px Cinzel, Georgia, serif';
+  ctx.fillStyle = '#1a3a6e';
+  ctx.textAlign = 'center';
+  ctx.fillText('CERTIFICADO', CX, 185);
+
+  // linha dourada degradê sob título
+  const lgW = 340;
+  const lg = ctx.createLinearGradient(CX - lgW, 0, CX + lgW, 0);
+  lg.addColorStop(0, 'rgba(196,154,0,0)');
+  lg.addColorStop(0.3, '#c49a00');
+  lg.addColorStop(0.7, '#F5C842');
+  lg.addColorStop(1, 'rgba(245,200,66,0)');
+  ctx.fillStyle = lg;
+  ctx.fillRect(CX - lgW, 194, lgW * 2, 3);
+
+  // ═══════════════════════
+  //  ZONA C — SUBTÍTULO (210–310)
+  // ═══════════════════════
+  ctx.font = 'italic 22px Georgia, serif';
+  ctx.fillStyle = '#7a6030';
+  ctx.textAlign = 'center';
+  ctx.fillText('de Conclusão de Curso', CX, 232);
+
+  ctx.fillStyle = '#b8940a';
+  ctx.font = '20px Georgia, serif';
+  ctx.fillText('— ✦ ✦ ✦ —', CX, 265);
+
+  ctx.font = '19px Georgia, serif';
+  ctx.fillStyle = '#333';
+  ctx.fillText('Certificamos que', CX, 302);
+
+  // ═══════════════════════
+  //  ZONA D — NOME + CPF (310–465)
+  // ═══════════════════════
+  // Faixa de fundo suave para o nome
+  const nameBg = ctx.createLinearGradient(CX - 500, 315, CX + 500, 315);
+  nameBg.addColorStop(0,   'rgba(26,58,110,0)');
+  nameBg.addColorStop(0.3, 'rgba(26,58,110,0.07)');
+  nameBg.addColorStop(0.7, 'rgba(26,58,110,0.07)');
+  nameBg.addColorStop(1,   'rgba(26,58,110,0)');
+  ctx.fillStyle = nameBg;
+  ctx.fillRect(CX - 500, 316, 1000, 82);
+
+  // Escolhe tamanho de fonte adaptativo para o nome
+  let nameFontSize = 54;
+  ctx.font = `bold ${nameFontSize}px Cinzel, Georgia, serif`;
+  while (ctx.measureText(nomeUp).width > 1080 && nameFontSize > 32) {
+    nameFontSize -= 2;
+    ctx.font = `bold ${nameFontSize}px Cinzel, Georgia, serif`;
+  }
+
+  const nameGrad = ctx.createLinearGradient(CX - 400, 0, CX + 400, 0);
+  nameGrad.addColorStop(0,   '#1a3a6e');
+  nameGrad.addColorStop(0.5, '#0d2060');
+  nameGrad.addColorStop(1,   '#1a3a6e');
+  ctx.fillStyle = nameGrad;
+  ctx.textAlign = 'center';
+
+  // Se o nome ainda for longo, quebra em duas linhas
+  if (ctx.measureText(nomeUp).width > 1080) {
+    const half = Math.ceil(nomeUp.split(' ').length / 2);
+    const words = nomeUp.split(' ');
+    const line1 = words.slice(0, half).join(' ');
+    const line2 = words.slice(half).join(' ');
+    nameFontSize = Math.min(nameFontSize, 42);
+    ctx.font = `bold ${nameFontSize}px Cinzel, Georgia, serif`;
+    ctx.fillText(line1, CX, 356);
+    ctx.fillText(line2, CX, 356 + nameFontSize + 8);
+  } else {
+    ctx.fillText(nomeUp, CX, 370);
+  }
+
+  // Linha dourada sob o nome
+  ctx.fillStyle = lg;
+  ctx.fillRect(CX - 420, 386, 840, 2);
+
+  // CPF e e-mail lado a lado
+  ctx.font = '15px Georgia, serif';
+  ctx.fillStyle = '#5a4a2a';
+  ctx.textAlign = 'center';
+  ctx.fillText(`CPF: ${state.player.cpf}   ·   ${state.player.email}`, CX, 415);
+
+  // Cidade e função
+  ctx.font = '15px Georgia, serif';
+  ctx.fillStyle = '#666';
+  ctx.textAlign = 'center';
+  const cidFunc = fitText(ctx, `${state.player.city}  ·  ${state.player.role}`, 900);
+  ctx.fillText(cidFunc, CX, 442);
+
+  // ═══════════════════════
+  //  ZONA E — DESCRIÇÃO DO CURSO (462–580)
+  // ═══════════════════════
+  ctx.font = '19px Georgia, serif';
+  ctx.fillStyle = '#222';
+  ctx.textAlign = 'center';
+  ctx.fillText('concluiu com aprovação o curso interativo', CX, 482);
+
+  ctx.font = 'bold 32px Cinzel, Georgia, serif';
+  ctx.fillStyle = '#1a3a6e';
+  ctx.fillText('SHOW DO SUAS — PORTARIA 1.043/2024', CX, 524);
+
+  ctx.font = 'italic 17px Georgia, serif';
+  ctx.fillStyle = '#5a4a2a';
+  const subtCurso = 'Gestão e Financiamento do SUAS · Modalidade Quiz Interativo · Carga Horária: 4 horas';
+  ctx.fillText(fitText(ctx, subtCurso, 1100), CX, 556);
+
+  // ═══════════════════════
+  //  ZONA F — BOXES INFORMATIVOS (575–665)
+  // ═══════════════════════
+  const boxes = [
+    { label: 'CARGA HORÁRIA',   value: '4 horas' },
+    { label: 'APROVEITAMENTO',  value: `${pct}%  (${state.hits}/15)` },
+    { label: 'BASE NORMATIVA',  value: 'Port. 1.043/2024' }
+  ];
+  const bW = 280, bH = 68, bGap = 28;
+  const bTotalW = bW * 3 + bGap * 2;
+  const bStartX = (W - bTotalW) / 2;
+  const bY = 578;
+
+  boxes.forEach((b, i) => {
+    const bx = bStartX + i * (bW + bGap);
+    // sombra suave
+    ctx.fillStyle = 'rgba(0,0,0,0.04)';
+    roundRect(ctx, bx + 2, bY + 2, bW, bH, 10);
+    ctx.fill();
+    // fundo
+    ctx.fillStyle = 'rgba(26,58,110,0.07)';
+    roundRect(ctx, bx, bY, bW, bH, 10);
+    ctx.fill();
+    // borda
+    ctx.strokeStyle = 'rgba(196,154,0,0.45)';
+    ctx.lineWidth = 1.5;
+    roundRect(ctx, bx, bY, bW, bH, 10);
+    ctx.stroke();
+    // label
+    ctx.font = 'bold 10px Georgia, serif';
+    ctx.fillStyle = '#8a6a20';
+    ctx.textAlign = 'center';
+    ctx.fillText(b.label, bx + bW / 2, bY + 20);
+    // valor
+    ctx.font = 'bold 22px Cinzel, Georgia, serif';
+    ctx.fillStyle = '#1a3a6e';
+    ctx.fillText(fitText(ctx, b.value, bW - 20), bx + bW / 2, bY + 50);
+  });
+
+  // ═══════════════════════
+  //  ZONA G — DATA DE EMISSÃO EM DESTAQUE (668–758)
+  // ═══════════════════════
+  const dateY = 668;
+
+  // Linha separadora antes da data
+  ctx.setLineDash([6, 5]);
+  ctx.strokeStyle = 'rgba(196,154,0,0.4)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(100, dateY);
+  ctx.lineTo(W - 100, dateY);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Cápsula de destaque para a data
+  const capW = 520, capH = 56, capX = CX - capW / 2, capYpos = dateY + 12;
+  const capGrad = ctx.createLinearGradient(capX, 0, capX + capW, 0);
+  capGrad.addColorStop(0,   '#0d2145');
+  capGrad.addColorStop(0.5, '#1a3a6e');
+  capGrad.addColorStop(1,   '#0d2145');
+  ctx.fillStyle = capGrad;
+  roundRect(ctx, capX, capYpos, capW, capH, 28);
+  ctx.fill();
+
+  // Borda dourada na cápsula
+  ctx.strokeStyle = '#c49a00';
+  ctx.lineWidth = 2;
+  roundRect(ctx, capX, capYpos, capW, capH, 28);
+  ctx.stroke();
+
+  // Ícone calendário
+  ctx.font = '20px Georgia, serif';
+  ctx.fillStyle = '#FFE082';
+  ctx.textAlign = 'left';
+  ctx.fillText('📅', capX + 22, capYpos + 36);
+
+  // Rótulo EMITIDO EM
+  ctx.font = 'bold 11px Cinzel, Georgia, serif';
+  ctx.fillStyle = 'rgba(255,224,130,0.7)';
+  ctx.textAlign = 'left';
+  ctx.fillText('EMITIDO EM', capX + 58, capYpos + 22);
+
+  // Data por extenso
+  ctx.font = 'bold 22px Cinzel, Georgia, serif';
+  ctx.fillStyle = '#FFE082';
+  ctx.fillText(dateStr, capX + 58, capYpos + 44);
+
+  // Linha separadora após a data
+  ctx.setLineDash([6, 5]);
+  ctx.strokeStyle = 'rgba(196,154,0,0.4)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(100, dateY + 82);
+  ctx.lineTo(W - 100, dateY + 82);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // ═══════════════════════
+  //  ZONA H — ASSINATURAS (762–858)
+  // ═══════════════════════
+  const sigY = 762;
+  const sigLineY = sigY + 60;
+
+  // Assinatura ESQUERDA — Nilton Gomes
+  const sig1CX = 300;
+  ctx.strokeStyle = '#1a3a6e';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([]);
+  ctx.beginPath();
+  ctx.moveTo(sig1CX - 170, sigLineY);
+  ctx.lineTo(sig1CX + 170, sigLineY);
+  ctx.stroke();
+
+  ctx.font = 'bold 15px Cinzel, Georgia, serif';
+  ctx.fillStyle = '#1a3a6e';
+  ctx.textAlign = 'center';
+  ctx.fillText('NILTON GOMES', sig1CX, sigLineY + 22);
+
+  ctx.font = '12px Georgia, serif';
+  ctx.fillStyle = '#555';
+  ctx.fillText('Contador · CRC MA', sig1CX, sigLineY + 40);
+  ctx.fillText('Especialista em Gestão Municipal do SUAS', sig1CX, sigLineY + 56);
+  ctx.fillText('Macro Consultoria e Treinamento', sig1CX, sigLineY + 72);
+
+  // Assinatura DIREITA — Participante
+  const sig2CX = W - 300;
+  ctx.strokeStyle = '#1a3a6e';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(sig2CX - 170, sigLineY);
+  ctx.lineTo(sig2CX + 170, sigLineY);
+  ctx.stroke();
+
+  ctx.font = `bold ${nome.length > 28 ? 12 : 15}px Cinzel, Georgia, serif`;
+  ctx.fillStyle = '#1a3a6e';
+  ctx.textAlign = 'center';
+  ctx.fillText(fitText(ctx, nomeUp, 340), sig2CX, sigLineY + 22);
+
+  ctx.font = '12px Georgia, serif';
+  ctx.fillStyle = '#555';
+  ctx.fillText(fitText(ctx, state.player.role, 340), sig2CX, sigLineY + 40);
+  ctx.fillText(fitText(ctx, state.player.city, 340), sig2CX, sigLineY + 56);
+  ctx.fillText(`CPF: ${state.player.cpf}`, sig2CX, sigLineY + 72);
+
+  // ═══════════════════════
+  //  ZONA I — RODAPÉ (862–920)
+  // ═══════════════════════
+  const footGrad = ctx.createLinearGradient(0, 862, W, 862);
+  footGrad.addColorStop(0,   '#0d2145');
+  footGrad.addColorStop(0.5, '#1a3a6e');
+  footGrad.addColorStop(1,   '#0d2145');
+  ctx.fillStyle = footGrad;
+  ctx.fillRect(42, 862, W - 84, 50);
+
+  // Linha dourada acima do rodapé
+  ctx.fillStyle = '#c49a00';
+  ctx.fillRect(42, 862, W - 84, 2);
+
+  ctx.font = '12px Georgia, serif';
+  ctx.fillStyle = '#FFE082';
+
+  ctx.textAlign = 'left';
+  ctx.fillText(`Cód. verificação: ${state.certCode}`, 68, 892);
+
+  ctx.textAlign = 'center';
+  ctx.fillText('macroconsultoria.com.br  ·  contato@macroconsultoria.com.br', CX, 892);
+
+  ctx.textAlign = 'right';
+  ctx.fillText(`Emitido em: ${dateStr}`, W - 68, 892);
+}
+
+function downloadCert(){
+  const canvas=document.getElementById('certCanvas');
+  const link=document.createElement('a');
+  const nomeLimpo=state.player.name.replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,'');
+  link.download=`Certificado_SUAS_${nomeLimpo}.png`;
+  link.href=canvas.toDataURL('image/png',1.0);
+  link.click();
+}
+
+function printCert(){
+  const canvas=document.getElementById('certCanvas');
+  const win=window.open('','_blank');
+  win.document.write(`<html><head><title>Certificado SUAS</title><style>*{margin:0;padding:0;}body{background:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh;}img{max-width:100%;}</style></head><body><img src="${canvas.toDataURL('image/png',1.0)}"/></body></html>`);
+  win.document.close();
+  win.onload=()=>{win.print();};
+}
+
+// helpers
+function show(id){document.getElementById(id).classList.remove('hidden');}
+function hide(id){document.getElementById(id).classList.add('hidden');}
+function showModal(id){document.getElementById(id).classList.remove('hidden');}
+function hideModal(id){document.getElementById(id).classList.add('hidden');}
+
+function confetti(){
+  const colors=['#F5C842','#FFE082','#42A5F5','#00E676','#FF1744','#00BCD4','#fff','#c49a00'];
+  for(let i=0;i<140;i++){
+    setTimeout(()=>{
+      const p=document.createElement('div');
+      p.className='confetti-piece';
+      const sz=Math.random()*12+6;
+      const dur=Math.random()*3+2;
+      p.style.cssText=`left:${Math.random()*100}vw;top:-20px;width:${sz}px;height:${sz}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${Math.random()>.5?'50%':'2px'};animation:confettiFall ${dur}s ease forwards;animation-delay:${Math.random()*2}s;`;
+      document.body.appendChild(p);
+      setTimeout(()=>p.remove(),(dur+2)*1000);
+    },i*18);
+  }
+}
+</script>
+</body>
+</html>
